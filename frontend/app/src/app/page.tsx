@@ -1,7 +1,7 @@
 import { getBookings } from "@/api/getBookings";
 import BookingTable from "@/components/BookingTable";
 import { PlusOutlined } from "@ant-design/icons";
-import { Button, Card, Typography } from "antd";
+import { Button, Card } from "antd";
 import Link from "next/link";
 
 const Home = async () => {
