@@ -31,13 +31,12 @@ export async function createBooking(
     );
 
     if (!response.ok) {
-      throw new Error("Failed to create booking");
+      return { success: false, message: "Failed to create booking" };
     }
 
     revalidatePath("/bookings");
     return { success: true, message: "Booking created successfully" };
   } catch (error) {
-    console.error("Error creating booking:", error);
     return {
       success: false,
       message: "An error occurred while creating the booking",

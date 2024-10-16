@@ -1,10 +1,10 @@
 import { getBookings } from "@/api/getBookings";
-import BookingDetails from "@/components/BookingDetails";
+import BookingSummary from "@/components/BookingSummary";
 import { Booking } from "@/types/booking";
 import { Result } from "antd";
 import Link from "next/link";
 
-async function getBookingDetails(id: string): Promise<Booking | undefined> {
+async function fetchBookingById(id: string): Promise<Booking | undefined> {
   const bookings = await getBookings();
   const booking = bookings.find((b) => b.id === parseInt(id));
 
@@ -16,7 +16,7 @@ export default async function BookingDetailsPage({
 }: {
   params: { id: string };
 }) {
-  const booking = await getBookingDetails(params.id);
+  const booking = await fetchBookingById(params.id);
 
   if (!booking) {
     return (
@@ -31,7 +31,7 @@ export default async function BookingDetailsPage({
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <BookingDetails booking={booking} />
+      <BookingSummary booking={booking} />
     </div>
   );
 }

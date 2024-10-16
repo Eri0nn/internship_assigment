@@ -12,7 +12,7 @@ import { Button, Card, Descriptions } from "antd";
 import Link from "next/link";
 import React from "react";
 
-const BookingDetails = ({ booking }: { booking: Booking }) => {
+const BookingSummary = ({ booking }: { booking: Booking }) => {
   return (
     <Card
       style={{ width: 600 }}
@@ -68,4 +68,4 @@ const BookingDetails = ({ booking }: { booking: Booking }) => {
   );
 };
 
-export default BookingDetails;
+export default BookingSummary;
