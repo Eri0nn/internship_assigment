@@ -1,14 +1,12 @@
 "use client";
 
 import { Booking } from "@/types/booking";
-import { PlusOutlined } from "@ant-design/icons";
-import { Button, Card, DatePicker, Space, Table, Typography } from "antd";
-import type { ColumnsType } from "antd/es/table";
+import { Space, Table } from "antd";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 const BookingTable = ({ bookings }: { bookings: Booking[] }) => {
-  const columns: ColumnsType<Booking> = [
+  const columns = [
     {
       title: "Booking Id",
       dataIndex: "id",
